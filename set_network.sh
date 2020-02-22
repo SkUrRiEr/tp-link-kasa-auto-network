@@ -30,7 +30,7 @@ IP="$(pyhs100 discover | grep "^Host" | sed 's/^.*: //')"
 
 echo "Found smart plug with IP ${IP}. Setting network data..."
 
-pyhs100 --plug --ip $IP raw-command netif set_stainfo "{'ssid': '${1}', 'password': '${2}', 'key_type': 3}"
+pyhs100 --ip $IP raw-command netif set_stainfo "{'ssid': '${1}', 'password': '${2}', 'key_type': 3}"
 
 echo "Network data set, killing connection..."
 
